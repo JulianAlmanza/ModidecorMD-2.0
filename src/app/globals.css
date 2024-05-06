@@ -1,33 +1,55 @@
 @tailwind base;
-@tailwind components;
-@tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
+@layer base {
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground text-white;
+  }
+
+  h1 {
+    @apply text-center text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl 2xl:text-7xl;
+  }
+
+  h2 {
+    @apply text-center text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl 2xl:text-6xl;
+  }
+
+  br {
+    @apply mt-1
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+
+
+
+
+  @tailwind components;
+
+@layer components {
+  .container {
+    @apply flex flex-col w-screen py-4 px-5 sm:px-10 md:px-20 2xl:px-40 items-center;
+  }
+
+  .subtitle {
+    @apply text-2xl xs:text-3xl text-orange-100 sm:text-5xl md:text-6xl lg:text-5xl font-bold xl:text-6xl 2xl:text-7xl
+  }
+
+  .click{
+    @apply xs:py-7 xs:text-2xl rounded-xl border-2 border-orange-600 bg-orange-400 text-lg hover:bg-orange-200 sm:text-3xl md:py-10 md:text-4xl;
+  }
+
+
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-}
+
+
+
+
+
+  @tailwind utilities;
+
+  
